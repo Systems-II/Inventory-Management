@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Inventory_Management
 {
-    public partial class Form1 : Form
+    public partial class View : Form
     {
-        public Form1()
+        private Controller mainController;
+
+        internal Controller MainController { get => mainController; set => mainController = value; }
+
+        public View(Controller controller)
         {
             InitializeComponent();
+            MainController = controller;
         }
 
         private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
