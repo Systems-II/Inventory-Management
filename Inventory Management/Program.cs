@@ -8,6 +8,8 @@ namespace Inventory_Management
 {
     static class Program
     {
+        //this is a GitHub commit test message.
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
