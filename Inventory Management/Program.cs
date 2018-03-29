@@ -8,7 +8,6 @@ namespace Inventory_Management
 {
     static class Program
     {
-        //this is a GitHub commit test message.
 
         /// <summary>
         /// The main entry point for the application.
@@ -18,9 +17,8 @@ namespace Inventory_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            View view = new View();
-            Controller controller = new Controller(view);
-            Application.Run(view);
+            Controller controller = new Controller(); //Declare and initialize the Controller
+            Application.Run(controller.View); //Run the application/Show the view by passing Run function the View from controller 
         }
     }
 }

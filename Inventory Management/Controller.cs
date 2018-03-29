@@ -9,17 +9,27 @@ namespace Inventory_Management
 {
     class Controller
     {
-        View mainView;
-        RequestModel request;
 
-        public Controller(View view)
+
+        #region VARIABLES AND PROPERTIES
+
+        private View view;
+        private RequestModel request;
+
+        public View View { get => view; set => view = value; }
+        internal RequestModel Request { get => request; set => request = value; }
+
+        #endregion
+
+
+        public Controller() //Controller class constructor
         {
-            MainView = view;
-            Request = new RequestModel();
+            View = new View(); //Initialize MainView to view passed from Program.cs
+            Request = new RequestModel(); //Initialize Request
         }
 
-        public View MainView { get => mainView; set => mainView = value; }
-        internal RequestModel Request { get => request; set => request = value; }
+
+
 
     }
 }

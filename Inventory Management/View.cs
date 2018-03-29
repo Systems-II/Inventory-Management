@@ -12,13 +12,16 @@ namespace Inventory_Management
 {
     partial class View : Form
     {
-        private Controller mainController;
-
-        internal Controller MainController { get => mainController; set => mainController = value; }
+        private Controller controller;
 
         public View()
         {
             InitializeComponent();
+        }
+
+        public void AddListener(Controller controller)
+        {
+            this.controller = controller;
         }
 
         private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
