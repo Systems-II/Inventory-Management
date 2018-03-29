@@ -7,21 +7,19 @@ using System.Windows.Forms;
 
 namespace Inventory_Management
 {
-    public class Controller
+    class Controller
     {
         View mainView;
+        RequestModel request;
 
-        public Controller()
+        public Controller(View view)
         {
-            MainView = new View(this);
-        }
-
-        public Form showView()
-        {
-            MainView.Show();
-            return MainView;
+            MainView = view;
+            Request = new RequestModel();
         }
 
         public View MainView { get => mainView; set => mainView = value; }
+        internal RequestModel Request { get => request; set => request = value; }
+
     }
 }
