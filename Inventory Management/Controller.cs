@@ -25,15 +25,20 @@ namespace Inventory_Management
         public Controller() //Controller class constructor
         {
             View = new View(); //Initialize MainView to view passed from Program.cs
-            View.AddListener(this); //Pass this Controller to View
             Request = new RequestModel(); //Initialize Request
+            View.AddListener(this, Request); //Pass this Controller and Request to View
         }
 
         public void OnSubmitClick()
         {
-            request.GetDBConnection();
+            Request.StoreRequest();
+            Request.ClearRequestModel();
         }
 
-
+        public void OnLookUpClick()
+        {
+            Request.PullStudentInfo();
+               
+        }
     }
 }

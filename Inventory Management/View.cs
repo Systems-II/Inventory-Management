@@ -19,14 +19,15 @@ namespace Inventory_Management
             InitializeComponent();
         }
 
-        public void AddListener(Controller controller)
+        private RequestModel request;
+
+        internal RequestModel Request { get => request; set => request = value; }
+
+        public void AddListener(Controller controller, RequestModel request)
         {
             this.controller = controller;
-        }
-
-        private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
-        {
-
+            Request = request;
+            requestModelBindingSource.DataSource = request;
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -64,14 +65,41 @@ namespace Inventory_Management
 
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
+        private void btnSubmitClick(object sender, EventArgs e)
         {
             controller.OnSubmitClick();
+            UpdateTNumber();
+            UpdateFamilySize();
+            UpdateNotes();
+        }
+
+        private void btnLookUpStudentClick(object sender, EventArgs e)
+        {
+            controller.OnLookUpClick();
+            UpdateFamilySize();
+            UpdateNotes();
+        }
+
+        private void UpdateTNumber()
+        {
+            txtTNumber.Text = Request.TNumber;
+        }
+
+        private void UpdateFamilySize()
+        {
+            nudFamilySize.Value = Request.FamilySize;
+        }
+
+        private void UpdateNotes()
+        {
+            rtxtNotes.Text = Request.Notes;
+        }
+
+        private void UpdateDates()
+        {
+            dtpDateReceived.Value = Request.DateRequested;
+            dtpDateFilled.Value = Request.DateFilled;
+            dtpDatePickedUp.Value = Request.DatePickedUp;
         }
     }
 }

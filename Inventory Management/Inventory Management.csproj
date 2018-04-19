@@ -62,7 +62,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCategoryAndItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCategoryAndItem.Designer.cs">
+      <DependentUpon>AddCategoryAndItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs" />
     <Compile Include="Controller.cs" />
+    <Compile Include="Donation.cs" />
+    <Compile Include="DonationModel.cs" />
     <Compile Include="View.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +81,9 @@
     <Compile Include="RequestModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddCategoryAndItem.resx">
+      <DependentUpon>AddCategoryAndItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +97,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DonationModel.datasource" />
+    <None Include="Properties\DataSources\RequestModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

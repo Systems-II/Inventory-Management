@@ -28,36 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.process1 = new System.Diagnostics.Process();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.randomCommandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblDateReceived = new System.Windows.Forms.Label();
+            this.lblDateFilled = new System.Windows.Forms.Label();
+            this.lblDatePickedUp = new System.Windows.Forms.Label();
+            this.dtpDateReceived = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateFilled = new System.Windows.Forms.DateTimePicker();
+            this.dtpDatePickedUp = new System.Windows.Forms.DateTimePicker();
+            this.txtTNumber = new System.Windows.Forms.TextBox();
+            this.lblTNumber = new System.Windows.Forms.Label();
+            this.lblFamilySize = new System.Windows.Forms.Label();
+            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this.lblNotes = new System.Windows.Forms.Label();
+            this.btnSubmitRequest = new System.Windows.Forms.Button();
+            this.btnLookUpStudent = new System.Windows.Forms.Button();
+            this.nudFamilySize = new System.Windows.Forms.NumericUpDown();
+            this.tabDonationRequest = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.lblItemName = new System.Windows.Forms.Label();
+            this.lblWeightDonated = new System.Windows.Forms.Label();
+            this.lblDateDonationReceived = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.btnSubmitItem = new System.Windows.Forms.Button();
+            this.cbxCategory = new System.Windows.Forms.ComboBox();
+            this.cbxItemName = new System.Windows.Forms.ComboBox();
+            this.nudWeightDonated = new System.Windows.Forms.NumericUpDown();
+            this.requestModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.donationModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.donationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.donationDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddToBatch = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFamilySize)).BeginInit();
+            this.tabDonationRequest.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeightDonated)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donationModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donationsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donationDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // process1
@@ -70,342 +86,396 @@
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
             // 
-            // panel1
+            // lblDateReceived
             // 
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Location = new System.Drawing.Point(30, 96);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(246, 92);
-            this.panel1.TabIndex = 5;
+            this.lblDateReceived.AutoSize = true;
+            this.lblDateReceived.Location = new System.Drawing.Point(390, 261);
+            this.lblDateReceived.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateReceived.Name = "lblDateReceived";
+            this.lblDateReceived.Size = new System.Drawing.Size(190, 17);
+            this.lblDateReceived.TabIndex = 6;
+            this.lblDateReceived.Text = "Date Request Was Received";
             // 
-            // radioButton2
+            // lblDateFilled
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(30, 8);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(203, 29);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Student Request";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.lblDateFilled.AutoSize = true;
+            this.lblDateFilled.Location = new System.Drawing.Point(390, 320);
+            this.lblDateFilled.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateFilled.Name = "lblDateFilled";
+            this.lblDateFilled.Size = new System.Drawing.Size(164, 17);
+            this.lblDateFilled.TabIndex = 15;
+            this.lblDateFilled.Text = "Date Request Was Filled";
             // 
-            // radioButton1
+            // lblDatePickedUp
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(30, 52);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(129, 29);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.Text = "Donation";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.lblDatePickedUp.AutoSize = true;
+            this.lblDatePickedUp.Location = new System.Drawing.Point(390, 379);
+            this.lblDatePickedUp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDatePickedUp.Name = "lblDatePickedUp";
+            this.lblDatePickedUp.Size = new System.Drawing.Size(195, 17);
+            this.lblDatePickedUp.TabIndex = 18;
+            this.lblDatePickedUp.Text = "Date Request Was Picked Up";
             // 
-            // label1
+            // dtpDateReceived
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(580, 383);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Date Request Was Received";
+            this.dtpDateReceived.Location = new System.Drawing.Point(394, 280);
+            this.dtpDateReceived.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDateReceived.Name = "dtpDateReceived";
+            this.dtpDateReceived.Size = new System.Drawing.Size(265, 22);
+            this.dtpDateReceived.TabIndex = 20;
             // 
-            // menuStrip1
+            // dtpDateFilled
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.randomCommandToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 4, 0, 4);
-            this.menuStrip1.Size = new System.Drawing.Size(1002, 44);
-            this.menuStrip1.TabIndex = 11;
-            this.menuStrip1.Text = "menuStrip1";
+            this.dtpDateFilled.Location = new System.Drawing.Point(394, 339);
+            this.dtpDateFilled.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDateFilled.Name = "dtpDateFilled";
+            this.dtpDateFilled.Size = new System.Drawing.Size(265, 22);
+            this.dtpDateFilled.TabIndex = 21;
             // 
-            // randomCommandToolStripMenuItem
+            // dtpDatePickedUp
             // 
-            this.randomCommandToolStripMenuItem.Name = "randomCommandToolStripMenuItem";
-            this.randomCommandToolStripMenuItem.Size = new System.Drawing.Size(251, 36);
-            this.randomCommandToolStripMenuItem.Text = "Export Totals to Excel";
+            this.dtpDatePickedUp.Location = new System.Drawing.Point(394, 398);
+            this.dtpDatePickedUp.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDatePickedUp.Name = "dtpDatePickedUp";
+            this.dtpDatePickedUp.Size = new System.Drawing.Size(265, 22);
+            this.dtpDatePickedUp.TabIndex = 22;
             // 
-            // label2
+            // txtTNumber
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(580, 475);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(250, 25);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Date Request Was Filled";
+            this.txtTNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.requestModelBindingSource, "TNumber", true));
+            this.txtTNumber.Location = new System.Drawing.Point(16, 41);
+            this.txtTNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTNumber.Name = "txtTNumber";
+            this.txtTNumber.Size = new System.Drawing.Size(160, 22);
+            this.txtTNumber.TabIndex = 23;
             // 
-            // label3
+            // lblTNumber
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(580, 567);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(296, 25);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Date Request Was Picked Up";
+            this.lblTNumber.AutoSize = true;
+            this.lblTNumber.Location = new System.Drawing.Point(13, 20);
+            this.lblTNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTNumber.Name = "lblTNumber";
+            this.lblTNumber.Size = new System.Drawing.Size(135, 17);
+            this.lblTNumber.TabIndex = 24;
+            this.lblTNumber.Text = "Student\'s T-Number";
+            // 
+            // lblFamilySize
+            // 
+            this.lblFamilySize.AutoSize = true;
+            this.lblFamilySize.Location = new System.Drawing.Point(391, 168);
+            this.lblFamilySize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFamilySize.Name = "lblFamilySize";
+            this.lblFamilySize.Size = new System.Drawing.Size(139, 17);
+            this.lblFamilySize.TabIndex = 25;
+            this.lblFamilySize.Text = "Family Size Provided";
+            // 
+            // rtxtNotes
+            // 
+            this.rtxtNotes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.requestModelBindingSource, "Notes", true));
+            this.rtxtNotes.Location = new System.Drawing.Point(13, 189);
+            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
+            this.rtxtNotes.Name = "rtxtNotes";
+            this.rtxtNotes.Size = new System.Drawing.Size(360, 232);
+            this.rtxtNotes.TabIndex = 32;
+            this.rtxtNotes.Text = "";
+            // 
+            // lblNotes
+            // 
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Location = new System.Drawing.Point(13, 168);
+            this.lblNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(45, 17);
+            this.lblNotes.TabIndex = 33;
+            this.lblNotes.Text = "Notes";
+            // 
+            // btnSubmitRequest
+            // 
+            this.btnSubmitRequest.Location = new System.Drawing.Point(264, 429);
+            this.btnSubmitRequest.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSubmitRequest.Name = "btnSubmitRequest";
+            this.btnSubmitRequest.Size = new System.Drawing.Size(129, 28);
+            this.btnSubmitRequest.TabIndex = 34;
+            this.btnSubmitRequest.Text = "Submit Request";
+            this.btnSubmitRequest.UseVisualStyleBackColor = true;
+            this.btnSubmitRequest.Click += new System.EventHandler(this.btnSubmitClick);
+            // 
+            // btnLookUpStudent
+            // 
+            this.btnLookUpStudent.Location = new System.Drawing.Point(16, 71);
+            this.btnLookUpStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLookUpStudent.Name = "btnLookUpStudent";
+            this.btnLookUpStudent.Size = new System.Drawing.Size(129, 28);
+            this.btnLookUpStudent.TabIndex = 38;
+            this.btnLookUpStudent.Text = "Look Up Student";
+            this.btnLookUpStudent.UseVisualStyleBackColor = true;
+            this.btnLookUpStudent.Click += new System.EventHandler(this.btnLookUpStudentClick);
+            // 
+            // nudFamilySize
+            // 
+            this.nudFamilySize.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.requestModelBindingSource, "FamilySize", true));
+            this.nudFamilySize.Location = new System.Drawing.Point(394, 188);
+            this.nudFamilySize.Name = "nudFamilySize";
+            this.nudFamilySize.Size = new System.Drawing.Size(120, 22);
+            this.nudFamilySize.TabIndex = 39;
+            // 
+            // tabDonationRequest
+            // 
+            this.tabDonationRequest.Controls.Add(this.tabPage1);
+            this.tabDonationRequest.Controls.Add(this.tabPage2);
+            this.tabDonationRequest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabDonationRequest.Location = new System.Drawing.Point(0, 0);
+            this.tabDonationRequest.Name = "tabDonationRequest";
+            this.tabDonationRequest.SelectedIndex = 0;
+            this.tabDonationRequest.Size = new System.Drawing.Size(676, 507);
+            this.tabDonationRequest.TabIndex = 40;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tabPage1.Controls.Add(this.lblTNumber);
+            this.tabPage1.Controls.Add(this.txtTNumber);
+            this.tabPage1.Controls.Add(this.btnLookUpStudent);
+            this.tabPage1.Controls.Add(this.lblFamilySize);
+            this.tabPage1.Controls.Add(this.nudFamilySize);
+            this.tabPage1.Controls.Add(this.lblNotes);
+            this.tabPage1.Controls.Add(this.rtxtNotes);
+            this.tabPage1.Controls.Add(this.lblDateReceived);
+            this.tabPage1.Controls.Add(this.dtpDateReceived);
+            this.tabPage1.Controls.Add(this.lblDateFilled);
+            this.tabPage1.Controls.Add(this.dtpDateFilled);
+            this.tabPage1.Controls.Add(this.lblDatePickedUp);
+            this.tabPage1.Controls.Add(this.dtpDatePickedUp);
+            this.tabPage1.Controls.Add(this.btnSubmitRequest);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(668, 478);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.AutoScroll = true;
+            this.tabPage2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tabPage2.Controls.Add(this.btnAddToBatch);
+            this.tabPage2.Controls.Add(this.donationDataGridView);
+            this.tabPage2.Controls.Add(this.nudWeightDonated);
+            this.tabPage2.Controls.Add(this.cbxItemName);
+            this.tabPage2.Controls.Add(this.cbxCategory);
+            this.tabPage2.Controls.Add(this.btnSubmitItem);
+            this.tabPage2.Controls.Add(this.dateTimePicker1);
+            this.tabPage2.Controls.Add(this.lblDateDonationReceived);
+            this.tabPage2.Controls.Add(this.lblWeightDonated);
+            this.tabPage2.Controls.Add(this.lblItemName);
+            this.tabPage2.Controls.Add(this.lblCategory);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(668, 478);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Location = new System.Drawing.Point(8, 14);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(65, 17);
+            this.lblCategory.TabIndex = 0;
+            this.lblCategory.Text = "Category";
+            // 
+            // lblItemName
+            // 
+            this.lblItemName.AutoSize = true;
+            this.lblItemName.Location = new System.Drawing.Point(8, 47);
+            this.lblItemName.Name = "lblItemName";
+            this.lblItemName.Size = new System.Drawing.Size(75, 17);
+            this.lblItemName.TabIndex = 2;
+            this.lblItemName.Text = "Item Name";
+            // 
+            // lblWeightDonated
+            // 
+            this.lblWeightDonated.AutoSize = true;
+            this.lblWeightDonated.Location = new System.Drawing.Point(8, 80);
+            this.lblWeightDonated.Name = "lblWeightDonated";
+            this.lblWeightDonated.Size = new System.Drawing.Size(142, 17);
+            this.lblWeightDonated.TabIndex = 4;
+            this.lblWeightDonated.Text = "Weight Donated (lbs)";
+            // 
+            // lblDateDonationReceived
+            // 
+            this.lblDateDonationReceived.AutoSize = true;
+            this.lblDateDonationReceived.Location = new System.Drawing.Point(8, 113);
+            this.lblDateDonationReceived.Name = "lblDateDonationReceived";
+            this.lblDateDonationReceived.Size = new System.Drawing.Size(101, 17);
+            this.lblDateDonationReceived.TabIndex = 6;
+            this.lblDateDonationReceived.Text = "Date Received";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(586, 413);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dateTimePicker1.Location = new System.Drawing.Point(180, 108);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(396, 31);
-            this.dateTimePicker1.TabIndex = 20;
+            this.dateTimePicker1.Size = new System.Drawing.Size(201, 22);
+            this.dateTimePicker1.TabIndex = 7;
             // 
-            // dateTimePicker2
+            // btnSubmitItem
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(586, 506);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(396, 31);
-            this.dateTimePicker2.TabIndex = 21;
+            this.btnSubmitItem.Location = new System.Drawing.Point(282, 447);
+            this.btnSubmitItem.Name = "btnSubmitItem";
+            this.btnSubmitItem.Size = new System.Drawing.Size(105, 23);
+            this.btnSubmitItem.TabIndex = 8;
+            this.btnSubmitItem.Text = "Submit Batch";
+            this.btnSubmitItem.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker3
+            // cbxCategory
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(586, 598);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(396, 31);
-            this.dateTimePicker3.TabIndex = 22;
+            this.cbxCategory.FormattingEnabled = true;
+            this.cbxCategory.Location = new System.Drawing.Point(180, 11);
+            this.cbxCategory.Name = "cbxCategory";
+            this.cbxCategory.Size = new System.Drawing.Size(201, 24);
+            this.cbxCategory.TabIndex = 9;
             // 
-            // textBox1
+            // cbxItemName
             // 
-            this.textBox1.Location = new System.Drawing.Point(522, 94);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 31);
-            this.textBox1.TabIndex = 23;
+            this.cbxItemName.FormattingEnabled = true;
+            this.cbxItemName.Location = new System.Drawing.Point(180, 44);
+            this.cbxItemName.Name = "cbxItemName";
+            this.cbxItemName.Size = new System.Drawing.Size(201, 24);
+            this.cbxItemName.TabIndex = 10;
             // 
-            // label4
+            // nudWeightDonated
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(542, 63);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(202, 25);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Student\'s T-Number";
+            this.nudWeightDonated.Location = new System.Drawing.Point(180, 78);
+            this.nudWeightDonated.Name = "nudWeightDonated";
+            this.nudWeightDonated.Size = new System.Drawing.Size(77, 22);
+            this.nudWeightDonated.TabIndex = 11;
             // 
-            // label5
+            // requestModelBindingSource
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(544, 194);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(214, 25);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Family Size Provided";
+            this.requestModelBindingSource.DataSource = typeof(Inventory_Management.RequestModel);
             // 
-            // button1
+            // donationModelBindingSource
             // 
-            this.button1.Location = new System.Drawing.Point(430, 225);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 44);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.donationModelBindingSource.DataSource = typeof(Inventory_Management.DonationModel);
             // 
-            // button2
+            // donationsBindingSource
             // 
-            this.button2.Location = new System.Drawing.Point(504, 225);
-            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 44);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.donationsBindingSource.DataMember = "Donations";
+            this.donationsBindingSource.DataSource = this.donationModelBindingSource;
             // 
-            // button3
+            // donationDataGridView
             // 
-            this.button3.Location = new System.Drawing.Point(582, 225);
-            this.button3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 44);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.donationDataGridView.AutoGenerateColumns = false;
+            this.donationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.donationDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.donationDataGridView.DataSource = this.donationsBindingSource;
+            this.donationDataGridView.Location = new System.Drawing.Point(11, 175);
+            this.donationDataGridView.Name = "donationDataGridView";
+            this.donationDataGridView.RowTemplate.Height = 24;
+            this.donationDataGridView.Size = new System.Drawing.Size(642, 264);
+            this.donationDataGridView.TabIndex = 11;
             // 
-            // button4
+            // dataGridViewTextBoxColumn1
             // 
-            this.button4.Location = new System.Drawing.Point(654, 225);
-            this.button4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(62, 44);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Category";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Category";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // button5
+            // dataGridViewTextBoxColumn2
             // 
-            this.button5.Location = new System.Drawing.Point(728, 225);
-            this.button5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(62, 44);
-            this.button5.TabIndex = 30;
-            this.button5.Text = "5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Item";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Item";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // button6
+            // dataGridViewTextBoxColumn3
             // 
-            this.button6.Location = new System.Drawing.Point(802, 225);
-            this.button6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(58, 44);
-            this.button6.TabIndex = 31;
-            this.button6.Text = "6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Weight";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Weight";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // richTextBox1
+            // dataGridViewTextBoxColumn4
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(24, 342);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(538, 360);
-            this.richTextBox1.TabIndex = 32;
-            this.richTextBox1.Text = "";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DateDonationReceived1";
+            this.dataGridViewTextBoxColumn4.HeaderText = "DateDonationReceived1";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // label6
+            // btnAddToBatch
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 312);
-            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 25);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Notes";
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(430, 717);
-            this.button7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(194, 44);
-            this.button7.TabIndex = 34;
-            this.button7.Text = "Submit Request";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(650, 281);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 31);
-            this.textBox2.TabIndex = 35;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(442, 287);
-            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(208, 25);
-            this.label7.TabIndex = 36;
-            this.label7.Text = "Custom Family Size:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 65);
-            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(221, 25);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "Donation or Request?";
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(548, 135);
-            this.button8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(194, 44);
-            this.button8.TabIndex = 38;
-            this.button8.Text = "Look Up Student";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnAddToBatch.Location = new System.Drawing.Point(180, 146);
+            this.btnAddToBatch.Name = "btnAddToBatch";
+            this.btnAddToBatch.Size = new System.Drawing.Size(105, 23);
+            this.btnAddToBatch.TabIndex = 12;
+            this.btnAddToBatch.Text = "Add to Batch";
+            this.btnAddToBatch.UseVisualStyleBackColor = true;
             // 
             // View
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 785);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ClientSize = new System.Drawing.Size(676, 507);
+            this.Controls.Add(this.tabDonationRequest);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "View";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFamilySize)).EndInit();
+            this.tabDonationRequest.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeightDonated)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donationModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donationsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donationDataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Diagnostics.Process process1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem randomCommandToolStripMenuItem;
+        private System.Windows.Forms.Label lblDateReceived;
+        private System.Windows.Forms.DateTimePicker dtpDateReceived;
+        private System.Windows.Forms.Label lblDatePickedUp;
+        private System.Windows.Forms.Label lblDateFilled;
+        private System.Windows.Forms.Label lblTNumber;
+        private System.Windows.Forms.TextBox txtTNumber;
+        private System.Windows.Forms.DateTimePicker dtpDatePickedUp;
+        private System.Windows.Forms.DateTimePicker dtpDateFilled;
+        private System.Windows.Forms.Label lblFamilySize;
+        private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.RichTextBox rtxtNotes;
+        private System.Windows.Forms.Button btnSubmitRequest;
+        private System.Windows.Forms.Button btnLookUpStudent;
+        private System.Windows.Forms.BindingSource requestModelBindingSource;
+        private System.Windows.Forms.NumericUpDown nudFamilySize;
+        private System.Windows.Forms.TabControl tabDonationRequest;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label lblWeightDonated;
+        private System.Windows.Forms.Label lblItemName;
+        private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label lblDateDonationReceived;
+        private System.Windows.Forms.Button btnSubmitItem;
+        private System.Windows.Forms.NumericUpDown nudWeightDonated;
+        private System.Windows.Forms.ComboBox cbxItemName;
+        private System.Windows.Forms.ComboBox cbxCategory;
+        private System.Windows.Forms.BindingSource donationModelBindingSource;
+        private System.Windows.Forms.DataGridView donationDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.BindingSource donationsBindingSource;
+        private System.Windows.Forms.Button btnAddToBatch;
     }
 }
 
