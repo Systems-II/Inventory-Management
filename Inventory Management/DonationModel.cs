@@ -7,27 +7,26 @@ using System.Data.SQLite;
 
 namespace Inventory_Management
 {
-    class DonationModel
+    public class DonationModel
     {
         #region VARIABLES AND PROPERTIES
 
         private Donation donation;
-        private List<Category> categories;
-        private List<string> item;
+        private List<string> categories;
         private List<Donation> donations;
 
         public Donation Donation { get => donation; set => donation = value; }
-        public List<Category> Categories { get => categories; set => categories = value; }
-        public List<string> Item { get => item; set => item = value; }
+        public List<String> Categories { get => categories; set => categories = value; }
         public List<Donation> Donations { get => donations; set => donations = value; }
 
         #endregion
 
-        DonationModel()
+        public DonationModel()
         {
             Donation = new Donation();
             Donations = new List<Donation>();
-            Categories = new List<Category>();
+            Categories = new List<string>();
+            GetCategories();
         }
         public SQLiteConnection GetDBConnection()
         {
@@ -41,12 +40,12 @@ namespace Inventory_Management
             return sqlite_conn;
         }
 
-        public void GetItems()
+        public void GetCategories() //This whole function needs to be fixed because Category.cs is gone now. Except it might be fixed now
         {
             //SQL goes here to get all category and food names from DB
             SQLiteCommand command = new SQLiteCommand();
             command.Connection = GetDBConnection();
-            command.CommandText = 
+            command.CommandText =
                 "SELECT DISTINCT category_name " +
                 "FROM category " +
                 ";"
@@ -56,28 +55,32 @@ namespace Inventory_Management
 
             while (reader.Read())
             {
-                Categories.Add(new Category(reader.GetString(0)));
+                Categories.Add(reader.GetString(0));
             }
-
             reader.Close();
+            command.Connection.Close();
+        }
 
-            string tempCategory;
-            //command.Parameters.Add("@Category", tempCategory); //Is this out of order or something?
-            command.CommandText =
-                "SELECT item " +
-                "FROM category " +
-                "WHERE category = @Category " +
-                ";"
-                ;
+        public void AddDonationToDonations()
+        {
+            Donations.Add(Donation);
+        }
 
-
-            for (int i = 0; i < Categories.Count; i++)
+        public void StoreDonations()
+        {
+            //SQL goes here to store Donations to database
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = GetDBConnection();
+            command.Parameters.AddWithValue("@Category", Donations[0].Category);
+            command.Parameters.AddWithValue("@Weight", Donations[0].Weight);
+            command.Parameters.AddWithValue("DateDonationReceived", Donations[0].DateDonationReceived);
+            for (int i = 0; i < Donations.Count; i++)
             {
-                tempCategory = Categories[i].Name;
-                command.ExecuteReader();
-                reader.Read();
-
+                command.CommandText =
+                    "INSERT INTO inventory (item_name, category_name, weight, date_donation_received) VALUES ('Jeff', @Category, @Weight, @DateDonationReceived)";
             }
+
+            command.Connection.Close();
         }
     }
 }

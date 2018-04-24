@@ -19,15 +19,23 @@ namespace Inventory_Management
             InitializeComponent();
         }
 
-        private RequestModel request;
+        private RequestModel requestModel;
+        private DonationModel donationModel;
 
-        internal RequestModel Request { get => request; set => request = value; }
+        internal RequestModel RequestModel { get => requestModel; set => requestModel = value; }
+        internal DonationModel DonationModel { get => donationModel; set => donationModel = value; }
 
-        public void AddListener(Controller controller, RequestModel request)
+        public void AddListener(Controller controller, RequestModel requestModel, DonationModel donationModel)
         {
             this.controller = controller;
-            Request = request;
-            requestModelBindingSource.DataSource = request;
+            RequestModel = requestModel;
+            DonationModel = donationModel;
+            requestModelBindingSource.DataSource = requestModel;
+            donationsBindingSource.DataSource = donationModel.Donations;
+            donationBindingSource.DataSource = donationModel.Donation;
+            cbxCategory.DataSource = donationModel.Categories;
+            dgvDonations.DataSource = donationModel.Donations;
+
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -65,6 +73,9 @@ namespace Inventory_Management
 
         }
 
+        #region REQUEST HANDLERS AND FUNCTIONS
+
+        #region HANDLERS
         private void btnSubmitClick(object sender, EventArgs e)
         {
             controller.OnSubmitClick();
@@ -80,26 +91,59 @@ namespace Inventory_Management
             UpdateNotes();
         }
 
+        #endregion
+
+        #region FUNCTIONS
         private void UpdateTNumber()
         {
-            txtTNumber.Text = Request.TNumber;
+            txtTNumber.Text = RequestModel.TNumber;
         }
 
         private void UpdateFamilySize()
         {
-            nudFamilySize.Value = Request.FamilySize;
+            nudFamilySize.Value = RequestModel.FamilySize;
         }
 
         private void UpdateNotes()
         {
-            rtxtNotes.Text = Request.Notes;
+            rtxtNotes.Text = RequestModel.Notes;
         }
 
         private void UpdateDates()
         {
-            dtpDateReceived.Value = Request.DateRequested;
-            dtpDateFilled.Value = Request.DateFilled;
-            dtpDatePickedUp.Value = Request.DatePickedUp;
+            dtpDateReceived.Value = RequestModel.DateRequested;
+            dtpDateFilled.Value = RequestModel.DateFilled;
+            dtpDatePickedUp.Value = RequestModel.DatePickedUp;
         }
+
+        #endregion
+
+        #endregion
+
+        #region DONATION HANDLERS AND FUNCTIONS
+
+        #region HANDLERS    
+
+        private void btnSubmitItem_Click(object sender, EventArgs e)
+        {
+            DonationModel.StoreDonations();
+        }
+        private void btnAddToBatch_Click(object sender, EventArgs e)
+        {
+            DonationModel.AddDonationToDonations();
+            dgvDonations.DataSource = DonationModel.Donations;
+            dgvDonations.Refresh();
+        }
+
+        #endregion
+
+        #region FUNCTIONS
+
+
+
+        #endregion
+
+        #endregion
+
     }
 }

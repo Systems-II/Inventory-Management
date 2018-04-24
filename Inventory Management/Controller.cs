@@ -14,10 +14,12 @@ namespace Inventory_Management
         #region VARIABLES AND PROPERTIES
 
         private View view;
-        private RequestModel request;
+        private RequestModel requestModel;
+        private DonationModel donationModel;
 
         public View View { get => view; set => view = value; }
-        internal RequestModel Request { get => request; set => request = value; }
+        internal RequestModel RequestModel { get => requestModel; set => requestModel = value; }
+        internal DonationModel DonationModel { get => donationModel; set => donationModel = value; }
 
         #endregion
 
@@ -25,19 +27,20 @@ namespace Inventory_Management
         public Controller() //Controller class constructor
         {
             View = new View(); //Initialize MainView to view passed from Program.cs
-            Request = new RequestModel(); //Initialize Request
-            View.AddListener(this, Request); //Pass this Controller and Request to View
+            RequestModel = new RequestModel(); //Initialize RequestModel
+            DonationModel = new DonationModel(); //Initialize DonationModel
+            View.AddListener(this, RequestModel, DonationModel); //Pass this Controller and Request to View
         }
 
         public void OnSubmitClick()
         {
-            Request.StoreRequest();
-            Request.ClearRequestModel();
+            RequestModel.StoreRequest();
+            RequestModel.ClearRequestModel();
         }
 
         public void OnLookUpClick()
         {
-            Request.PullStudentInfo();
+            RequestModel.PullStudentInfo();
                
         }
     }

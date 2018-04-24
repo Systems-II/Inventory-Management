@@ -68,7 +68,6 @@
     <Compile Include="AddCategoryAndItem.Designer.cs">
       <DependentUpon>AddCategoryAndItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Category.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Donation.cs" />
     <Compile Include="DonationModel.cs" />
@@ -97,6 +96,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Donation.datasource" />
     <None Include="Properties\DataSources\DonationModel.datasource" />
     <None Include="Properties\DataSources\RequestModel.datasource" />
     <None Include="Properties\Settings.settings">
