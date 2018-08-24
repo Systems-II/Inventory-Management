@@ -7,7 +7,7 @@ using System.Data.SQLite;
 
 namespace Inventory_Management
 {
-    public class DonationModel
+    public class DonationVM
     {
         #region VARIABLES AND PROPERTIES
 
@@ -21,7 +21,7 @@ namespace Inventory_Management
 
         #endregion
 
-        public DonationModel()
+        public DonationVM()
         {
             Donation = new Donation();
             Donations = new List<Donation>();

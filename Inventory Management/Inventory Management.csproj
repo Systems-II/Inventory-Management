@@ -70,7 +70,7 @@
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="Donation.cs" />
-    <Compile Include="DonationModel.cs" />
+    <Compile Include="DonationVM.cs" />
     <Compile Include="View.cs">
       <SubType>Form</SubType>
     </Compile>
